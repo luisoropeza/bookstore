@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BookStore.Api.Controllers
 {
     [ApiController]
-    [Route("api/{controller}")]
+    [Route("api/[controller]")]
     public class CategoryController(ICategoryService service) : ControllerBase
     {
         [HttpGet]

@@ -1,6 +1,6 @@
 ﻿using BookStore.Application.DataTransferObjects.AuthorDto;
 using BookStore.Application.DataTransferObjects.CategoryDto;
-using BookStore.Domain.Entities;
+using BookStore.Application.DataTransferObjects.ImageDto;
 
 namespace BookStore.Application.DataTransferObjects.BookDto
 {
@@ -15,6 +15,6 @@ namespace BookStore.Application.DataTransferObjects.BookDto
         public int Stock { get; set; }
         public double Discount { get; set; }
         public AuthorResponse Author { get; set; } = default!;
-        public ICollection<Image> Images { get; set; } = [];
+        public IEnumerable<ImageResponse> Images { get; set; } = [];
     }
 }

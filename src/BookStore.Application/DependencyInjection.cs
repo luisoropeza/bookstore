@@ -1,5 +1,6 @@
 ﻿using BookStore.Application.Profiles;
 using BookStore.Application.Services.AuthorService;
+using BookStore.Application.Services.BookService;
 using BookStore.Application.Services.CategoryService;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +16,7 @@ public static class DependencyInjection
             typeof(CategoryProfile));
         services.AddScoped<IAuthorService, AuthorService>();
         services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IBookService, BookService>();
         return services;
     }
 }

@@ -11,6 +11,8 @@ namespace BookStore.Infrastructure.Repostories
         {
             return await context.Categories
                 .Include(c => c.Books)
+                    .ThenInclude(b => b.Images)
+                .AsSplitQuery()
                 .ToListAsync();
         }
 
@@ -18,6 +20,8 @@ namespace BookStore.Infrastructure.Repostories
         {
             return await context.Categories
                 .Include(c => c.Books)
+                    .ThenInclude(b => b.Images)
+                .AsSplitQuery()
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
     }
